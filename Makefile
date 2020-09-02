@@ -7,4 +7,5 @@ lab:
 		gcc bin.c funciones.c -o bin -lm
 		gcc class.c funciones.c -o class -lm
 		gcc write.c funciones.c -o write -lm		
-
+clean:
+	rm -f lab *.o *.c
