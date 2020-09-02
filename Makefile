@@ -8,4 +8,4 @@ lab:
 		gcc class.c funciones.c -o class -lm
 		gcc write.c funciones.c -o write -lm		
 clean:
-	rm -f lab *.o *.c
+	rm -f lab *.o 
