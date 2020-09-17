@@ -67,6 +67,7 @@ int main(int argc, char** argv){
         close(pipe1[READ]);
         write(pipe1[WRITE], imgGray->data, imgGray->size);
         close(pipe1[WRITE]);
+        wait(NULL);
     }
 
     // gcc main.c -o a -lm

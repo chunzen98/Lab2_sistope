@@ -25,5 +25,6 @@ int main(int argc, char** argv){
     strcat(bufferNombre, ".jpg");
 
     escribirJPG(img, bufferNombre);
+    wait(NULL);
 
 }

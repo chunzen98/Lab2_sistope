@@ -161,11 +161,11 @@ int clasificacion(JPG* img, int umbral){
 
     for (int i = 0; i < img->height; i++){
         for (int j = 0; j < img->width; j++){
-            if(img->data[x] < umbral){
-                pixNegros += 1;
+            if(img->data[x] == -1){
+                pixNoNegros += 1;
             }
             else{
-                pixNoNegros += 1;
+                pixNegros += 1;
             }
             x++;
         }    
@@ -174,9 +174,12 @@ int clasificacion(JPG* img, int umbral){
     float porcentajeNegro = (pixNegros*100)/img->size;
     float porcentajeNoNegro = (pixNoNegros*100)/img->size;
 
+    
+    printf("%f, %d\n", porcentajeNegro, umbral);
+
     // 1 : nearly blacc
     // 0 : not nearly blacc
-    if(porcentajeNegro > porcentajeNoNegro){
+    if(porcentajeNegro > umbral){
         return 1;
     }
     else{

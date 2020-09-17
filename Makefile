@@ -1,31 +1,25 @@
 CC=gcc
-CFLAGS=-c -lm -g
+CFLAGS=-lm
 
-all: main.o bin.o class.o conv.o read.o write.o gray.o funciones.o
+all: main bin class conv read write gray
 
-main.o: main.c funciones.h
-	$(CC) $(CFLAGS) main.c -o main.o
+main: main.c funciones.h
+	$(CC) funciones.c main.c -o main $(CFLAGS)
 
-bin.o: bin.c funciones.h
-	$(CC) $(CFLAGS) bin.c -o bin.o
+gray: gray.c funciones.h
+	$(CC) funciones.c gray.c -o gray $(CFLAGS)
 
-class.o: class.c funciones.h
-	$(CC) $(CFLAGS) class.c -o class.o
+bin: bin.c funciones.h
+	$(CC) bin.c funciones.c -o bin $(CFLAGS)
 
-conv.o: conv.c funciones.h
-	$(CC) $(CFLAGS) conv.c -o conv.o
+class: class.c funciones.h
+	$(CC) class.c funciones.c -o class $(CFLAGS)
 
-read.o: read.c funciones.h
-	$(CC) $(CFLAGS) read.c -o read.o
+conv: conv.c funciones.h
+	$(CC) conv.c funciones.c -o conv $(CFLAGS)
 
-write.o: write.c funciones.h
-	$(CC) $(CFLAGS) write.c -o write.o
+read: read.c funciones.h
+	$(CC) read.c funciones.c -o read $(CFLAGS)
 
-gray.o: gray.c funciones.h
-	$(CC) $(CFLAGS) gray.c -o gray.o
-
-funciones.o: funciones.c funciones.h
-	$(CC) $(CFLAGS) funciones.c -o funciones.o
-
-clean:
-	rm -f main *.o
+write: write.c funciones.h
+	$(CC) write.c funciones.c -o write $(CFLAGS)

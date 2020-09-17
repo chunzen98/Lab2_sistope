@@ -65,5 +65,6 @@ int main(int argc, char** argv){
         close(pipe1[READ]);
         write(pipe1[WRITE], imgBin->data, imgBin->size);
         close(pipe1[WRITE]);
+        wait(NULL);
     }
 }

@@ -77,6 +77,7 @@ int main(int argc, char** argv){
             execvp(args[0],args);
         }
         else{ // Padre no hace nada
+			wait(NULL);
         }
     }
     // 65536 max pipe size
